@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class StackTest {
 	@Test
 	void testStack() {
-		Stack cs = new StackImpl();
+		Stack cs = new StackImpl<Character>();
 
 		// zu Beginn muss der Stack leer sein!
 		assertEquals(0, cs.size());
@@ -19,8 +19,8 @@ public class StackTest {
 		assertThrows(NoSuchElementException.class, cs::pop);
 
 		// jetzt ein paar Werte pushen
-		char[] a = {'a', 'b', 'c'};
-		for (char c : a)
+		Character[] a = {'a', 'b', 'c'};
+		for (Character c : a)
 			cs.push(c);
 		// ...Groesse checken
 		assertEquals(3, cs.size());
